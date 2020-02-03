@@ -1,0 +1,11 @@
+.banner {
+  height: 10vh;
+  margin-top: 1vh;
+  display: flex;
+}
+
+#bannerImg {
+  max-width: 15vh;
+  height: auto;
+  object-fit: contain;
+}

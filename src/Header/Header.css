@@ -1,0 +1,8 @@
+.headerContainer {
+  display: flex;
+  margin: 1vh 0vh 5vh 1vh;
+}
+
+#headerMenuButton {
+  margin-right: 10vh;
+}
