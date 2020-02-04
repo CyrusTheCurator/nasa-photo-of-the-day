@@ -1,3 +1,15 @@
+.imageComponentContainer {
+  border: black 4px solid;
+  display: inline-block;
+  margin: 0px 5vw 0px 5vw;
+}
+
+.imageComponentContainer .description {
+  font-size: 1.2rem;
+}
+
 .date {
   margin-bottom: 25px;
+  font-family: fantasy;
+  font-size: 1.5rem;
 }

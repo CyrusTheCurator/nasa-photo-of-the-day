@@ -28,6 +28,7 @@ function App() {
     <div className="App">
       <Banner />
       <Header />
+      <h1>Astronomy Photo Of The Day</h1>
       <ImageComponent currentImageObj={currentImageObj} />
     </div>
   );
