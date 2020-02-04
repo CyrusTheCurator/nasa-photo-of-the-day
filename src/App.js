@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Banner from "./Banner";
 import Header from "./Header/Header";
-import ImageComponent from "./ImageComponent";
+import ImageComponent from "./ImageComponent/ImageComponent";
+import axios from "axios";
 
 function App() {
   const [currentImageObj, setCurrentImageObj] = useState(
@@ -10,10 +11,13 @@ function App() {
   );
 
   useEffect(() => {
-    fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+    axios
+      .get(
+        "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2012-03-14"
+      )
       .then(response => {
-        console.log(response);
-        setCurrentImageObj(response);
+        console.log(response.data.url);
+        setCurrentImageObj(response.data);
       })
       .catch(err => {
         console.log(`Error: ${err}`);
