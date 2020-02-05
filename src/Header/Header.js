@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderAnchorLink from "./HeaderAnchorLink";
+import HeaderAnchorLinks from "./HeaderAnchorLinks";
 import HeaderMenuButton from "./HeaderMenuButton";
 import "./Header.css";
 
@@ -7,7 +7,7 @@ function Header() {
   return (
     <div className="headerContainer">
       <HeaderMenuButton />
-      <HeaderAnchorLink />
+      <HeaderAnchorLinks />
     </div>
   );
 }

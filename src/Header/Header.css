@@ -1,6 +1,13 @@
 .headerContainer {
   display: flex;
-  margin: 1vh 0vh 10vh 1vh;
+  margin: 0vh 0vh 10vh 0px;
+  align-items: center;
+  background-color: darkblue;
+  color: white;
+  font-family: fantasy;
+  font-size: 2rem;
+  justify-content: space-between;
+  padding: 5px 11vw 5px 20px;
 }
 
 #headerMenuButton {
@@ -14,7 +21,18 @@
 .bar3 {
   width: 35px;
   height: 5px;
-  background-color: #333;
+  background-color: white;
   margin: 6px 0;
   transition: 0.4s;
+}
+.anchorLinkContainer {
+  margin-left: 0px;
+}
+
+.anchorLinkContainer a {
+  color: white;
+}
+
+.anchorLinkContainer a:hover {
+  color: turquoise;
 }

@@ -2,6 +2,7 @@
   border: black 4px solid;
   display: inline-block;
   margin: 0px 5vw 0px 5vw;
+  color: white;
 }
 
 .imageComponentContainer .description {
