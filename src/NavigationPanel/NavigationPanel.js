@@ -1,14 +1,26 @@
 import React, { useState, useEffect } from "react";
 import "./NavigationPanel.css";
-
+let currentYear = 0;
+let currentMonth = 0;
+let currentDay = 0;
 function NavigationPanel(props) {
+  useEffect(() => {
+    let currentDateArray = navigate();
+    currentYear = currentDateArray[0];
+    currentMonth = parseInt(currentDateArray[1]);
+    currentDay = parseInt(currentDateArray[2]);
+    console.log(
+      `useEffect initial render states day is ${currentYear}, ${currentMonth}, ${currentDay}`
+    );
+  }, []);
+
   const navigate = direction => {
     let year = "";
     let month = "";
     let date = "";
     let currentCharacter = "";
     //This function checks to see how many days are in the month we are entering
-    const monthChecker = arg => {
+    const monthCycler = arg => {
       //handle cycling into previous month
 
       if (
@@ -66,7 +78,7 @@ function NavigationPanel(props) {
         date = date - 1;
       } else {
         month = month - 1;
-        monthChecker("end");
+        monthCycler("end");
       }
     }
     if (direction === "right") {
@@ -80,13 +92,13 @@ function NavigationPanel(props) {
         month === 12
       ) {
         if (date === 31) {
-          monthChecker("start");
+          monthCycler("start");
         } else {
           date = date + 1;
         }
       } else if (month === 4 || month === 6 || month === 9 || month === 11) {
         if (date === 30) {
-          monthChecker("start");
+          monthCycler("start");
         } else {
           date = date + 1;
         }
@@ -116,6 +128,11 @@ function NavigationPanel(props) {
     }
     //end of leap year handler--------------------------------------------------------
 
+    //check if we are trying to navigate I N T O - T H E- F U T U R E
+    if (month === currentMonth && date > currentDay) {
+      return console.log("you have reached the current date");
+    }
+
     //add zeroes to properly format output
     if (date < 10) {
       date = "0" + date;
@@ -123,11 +140,15 @@ function NavigationPanel(props) {
     if (month < 10) {
       month = "0" + month;
     }
-    console.log(`before we assign, vals are ${year}, ${month}, ${date}`);
+    console.log(`before we assign,  new vals are ${year}, ${month}, ${date}`);
     let dateTotal = year + "-" + month + "-" + date;
-
+    console.log(
+      `current date information is: ${currentYear}, ${currentMonth}, ${currentDay}`
+    );
     //at long last, we have our new argument!
+
     props.setDate(dateTotal);
+    return [year, month, date];
   };
 
   const navigateLeft = () => {
