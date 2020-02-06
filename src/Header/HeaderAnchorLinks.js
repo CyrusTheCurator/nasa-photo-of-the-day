@@ -2,13 +2,13 @@ import React from "react";
 function HeaderAnchorLinks() {
   return (
     <>
-      <div class="anchorLinkContainer">
+      <div className="anchorLinkContainer">
         <a>Home</a>
       </div>
-      <div class="anchorLinkContainer">
+      <div className="anchorLinkContainer">
         <a>About</a>
       </div>
-      <div class="anchorLinkContainer">
+      <div className="anchorLinkContainer">
         <a>Portfolio</a>
       </div>
     </>

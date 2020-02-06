@@ -2,7 +2,7 @@ import React from "react";
 import "./ImageComponentContainer.css";
 function ImageComponent(props) {
   if (!props.currentImageObj) return <h3>Loading...</h3>;
-  if (props.currentImageObj.media_type != "image")
+  if (props.currentImageObj.media_type == "video")
     return (
       <h3>
         Error: Media type is:

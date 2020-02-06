@@ -34,4 +34,10 @@
 
 h1 {
   color: white;
+  border-bottom: white 2px solid;
+}
+
+h3 {
+  color: white;
+  border-bottom: white 2px solid;
 }
