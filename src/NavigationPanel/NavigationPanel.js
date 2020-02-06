@@ -40,19 +40,19 @@ function NavigationPanel(props) {
       //handle cycling into next month
     };
 
-    //grab the year and push it into the year string
+    //grab the year, loop through it, and push it into the year string
     for (let i = 0; i < props.date.length - 6; i++) {
       currentCharacter = props.date.charAt(i);
       year = year + currentCharacter;
     }
 
-    //grab the month and push it into the month string
+    //grab the month, loop through it, and push it into the month string
     for (let i = 5; i < props.date.length - 3; i++) {
       currentCharacter = props.date.charAt(i);
       month = month + currentCharacter;
     }
 
-    //grab the date and push it into the date string
+    //grab the date, loop through it, and push it into the date string
     for (let i = 8; i < props.date.length; i++) {
       currentCharacter = props.date.charAt(i);
       date = date + currentCharacter;
